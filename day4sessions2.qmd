@@ -1,0 +1,45 @@
+---
+title: "day4-comp2"
+format: html
+editor: visual
+---
+
+```{r}
+library(GGally)
+library(skimr)
+library(palmerpenguins)
+library(tidyverse)
+```
+
+# Basic data exploration
+
+```{r}
+view(penguins)
+```
+
+-   names: get variable names
+
+-   dim: get data dimensions
+
+-   head: get first n lines (6 by default)
+
+-   tail: get last n lines (6 by default)
+
+-   summary: get basic summary statistics
+
+```{r}
+names(penguins)
+dim(penguins)
+head(penguins)
+tail(penguins)
+summary(penguins)
+```
+
+```{r}
+skimr::skim(penguins)
+```
+
+```{r}
+ggpairs(penguins)
+# show a whole grid / relationship with variables / 
+```
