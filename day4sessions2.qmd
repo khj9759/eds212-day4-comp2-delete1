@@ -2,6 +2,8 @@
 title: "day4-comp2"
 format: html
 editor: visual
+execute: 
+  warning: FALSE
 ---
 
 ```{r}
@@ -42,4 +44,23 @@ skimr::skim(penguins)
 ```{r}
 ggpairs(penguins)
 # show a whole grid / relationship with variables / 
+```
+
+## Making more exploratory charts in ggplot2
+
+Histogram
+
+```{r}
+ggplot(data = penguins, aes(x = flipper_length_mm)) + 
+  geom_histogram(aes(fill=species)) + 
+  theme_minimal()
+#aes 
+```
+
+```{r}
+ggplot(data = penguins, aes(x=species, y = bill_length_mm)) + 
+  geom_boxplot(fill = "yellow",aes (color = island)) +
+  geom_jitter(alpha = 0.5, aes(size= bill_length_mm, color = bill_depth_mm)) + 
+  theme_dark()
+
 ```
